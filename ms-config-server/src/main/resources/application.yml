@@ -1,6 +1,6 @@
+
 server:
   port: 7070
-
 spring:
   application:
     name: config-server
@@ -8,12 +8,11 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/Mark-Pino/Prueba.git
-          searchPaths: config-data
+          uri: https://github.com/noetipo/DAD-backend.git
           #username:
           #password:
+          search-paths: config-data
           default-label: main
-
   security:
     user:
       name: root
