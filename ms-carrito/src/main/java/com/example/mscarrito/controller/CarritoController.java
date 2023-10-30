@@ -22,12 +22,12 @@ public class CarritoController {
         this.carritoService = carritoService;
     }
 
-    @GetMapping("/items")
+    @GetMapping
     public List<CarritoItem> obtenerItems() {
         return carritoService.obtenerTodosLosItems();
     }
 
-    @PostMapping("/agregar")
+    @PostMapping
     public CarritoItem agregarItem(@RequestBody CarritoItem item) {
         return carritoService.agregarItemAlCarrito(item);
     }
@@ -38,12 +38,7 @@ public class CarritoController {
         return ResponseEntity.ok().body(carritoService.ListarPorId(id).get());
     }
 
-    @DeleteMapping("/vaciar/{id}")
-    public void vaciarItemPorId(@PathVariable Integer id) {
-        carritoService.vaciarCarrito(id);
-    }
-
-    @DeleteMapping("/vaciar")
+    @DeleteMapping("/{id}")
     public CarritoItem vaciarCarrito(@RequestBody CarritoItem item) {
         return carritoService.vaciarCarrito(item);
     }
