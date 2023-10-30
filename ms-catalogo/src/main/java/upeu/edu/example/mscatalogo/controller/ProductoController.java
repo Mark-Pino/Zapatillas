@@ -1,5 +1,6 @@
 package upeu.edu.example.mscatalogo.controller;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +30,7 @@ public class ProductoController {
         return ResponseEntity.ok(productoService.actualizar(producto));
     }
 
+    @CircuitBreaker(name = "productoListarPorIdCB", fallbackMethod = "fallBackProductoListarPorIdCB")
     @GetMapping("/{id}")
     public ResponseEntity<Producto> listById(@PathVariable(required = true) Integer id) {
         return ResponseEntity.ok().body(productoService.listarPorId(id).get());
@@ -39,5 +41,9 @@ public class ProductoController {
         productoService.eliminarPorId(id);
         return "Eliminacion Correcta";
     }
-
+    private ResponseEntity<Producto> fallBackProductoListarPorIdCB(@PathVariable(required = true) Integer id, RuntimeException e) {
+        Producto producto = new Producto();
+        producto.setId(90000);
+        return ResponseEntity.ok().body(producto);
+    }
 }
