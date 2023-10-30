@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>ms-pago</artifactId> <!-- Cambio de ms-carrito a ms-pago -->
+    <artifactId>ms-factura</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ms-pago</name>
-    <description>ms-pago</description>
+    <name>ms-factura</name>
+    <description>ms-factura</description>
     <properties>
         <java.version>17</java.version>
         <spring-cloud.version>2022.0.4</spring-cloud.version>
@@ -96,4 +96,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

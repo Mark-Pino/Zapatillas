@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ms-Pago-Service
+    name: ms-Factura-Service
   profiles:
     active: development
   config:

@@ -1,5 +1,5 @@
 server:
-  #port: 8083
+  #port: 8081
   port: ${PORT:${SERVER_PORT:0}}
 springdoc:
   api-docs:
@@ -15,7 +15,7 @@ spring:
     show-sql: true
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ms-pago
+    url: jdbc:mysql://localhost:3306/ms-factura
     username: root
     password:
 

@@ -1,5 +1,4 @@
-package com.example.mspago.entity;
-
+package com.example.msfactura.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,10 +7,10 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Pago {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Factura {
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String descripcion;
+    private String cliente;
     private double monto;
 }
