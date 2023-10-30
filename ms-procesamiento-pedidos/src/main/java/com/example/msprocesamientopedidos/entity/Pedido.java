@@ -1,6 +1,6 @@
 package com.example.msprocesamientopedidos.entity;
 
-import com.example.mspedido.dto.Cliente;
+import com.example.msprocesamientopedidos.dto.Cliente;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;

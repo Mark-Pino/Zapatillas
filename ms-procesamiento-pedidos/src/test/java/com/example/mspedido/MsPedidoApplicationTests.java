@@ -1,10 +1,10 @@
-package com.example.msprocesamientopedidos;
+package com.example.mspedido;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MsProcesamientoPedidosApplicationTests {
+class MsPedidoApplicationTests {
 
 	@Test
 	void contextLoads() {

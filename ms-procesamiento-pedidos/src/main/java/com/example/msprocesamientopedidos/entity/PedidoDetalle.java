@@ -1,6 +1,6 @@
 package com.example.msprocesamientopedidos.entity;
 
-import com.example.mspedido.dto.Producto;
+import com.example.msprocesamientopedidos.dto.Producto;
 import jakarta.persistence.*;
 import lombok.Data;
 
