@@ -25,3 +25,14 @@ eureka:
       defaultZone: ${EUREKA_URI:http://localhost:8070/eureka}
   instance:
     hinstance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+  instances:
+    clienteListarPorIdCB:
+      registerHealthIndicator: true
+      slidingWindowSize: 10
+      permittedNumberOfCallsInHalfOpenState: 3
+      slidingWindowType: TIME_BASED
+      minimumNumberOfCalls: 4
+      waitDurationInOpenState: 5s
+      failureRateThreshold: 50
+      eventConsumerBufferSize: 10
