@@ -31,7 +31,7 @@ eureka:
 
 resilience4j.circuitbreaker:
   instances:
-    carritoListarPorIdCB:
+    facturaListarPorIdCB:
       registerHealthIndicator: true
       slidingWindowSize: 10
       permittedNumberOfCallsInHalfOpenState: 3
