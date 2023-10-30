@@ -41,14 +41,14 @@ spring:
           uri: lb://ms-proveedor-service
           predicates:
             - Path=/proveedor/**
-        - id: ms-carrito-Service
-          uri: lb://ms-carrito-Service
+        - id: ms-carrito-service
+          uri: lb://ms-carrito-service
           predicates:
             - Path=/carrito/**
-        - id: ms-factura-Service
-          uri: lb://ms-factura-Service
+        - id: ms-factura-service
+          uri: lb://ms-factura-service
           predicates:
-            - Path=/factura/**
+            - Path=/facturas/**
         - id: ms-Pago-Service
           uri: lb://ms-Pago-Service
           predicates:

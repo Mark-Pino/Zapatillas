@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ms-Carrito-Service
+    name: ms-carrito-service
   profiles:
       active: development
   config:
