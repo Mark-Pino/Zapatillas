@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/carrito")
+@RequestMapping("/carritoItem")
 public class CarritoController {
 
     private final CarritoService carritoService;

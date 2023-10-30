@@ -44,7 +44,7 @@ spring:
         - id: ms-carrito-service
           uri: lb://ms-carrito-service
           predicates:
-            - Path=/carrito/**
+            - Path=/carritoItem/**
         - id: ms-factura-service
           uri: lb://ms-factura-service
           predicates:
