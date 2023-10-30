@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: ${PORT:${SERVER_PORT:0}}
 
 springdoc:
   api-docs:
@@ -22,6 +22,6 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8070/eureka
+      defaultZone: ${EUREKA_URI:http://localhost:8070/eureka}
   instance:
-    hostname: localhost
+    hostname: ${spring.application.name}:${spring.application.instance_id:${random.value}}
