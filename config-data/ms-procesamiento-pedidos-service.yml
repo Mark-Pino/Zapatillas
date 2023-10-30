@@ -1,5 +1,5 @@
 server:
-  port: 8083
+  port: ${PORT:${SERVER_PORT:0}}
 springdoc:
   api-docs:
     enabled: true
@@ -21,9 +21,9 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8070/eureka
+      defaultZone: ${EUREKA_URI:http://localhost:8070/eureka}
   instance:
-    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
 resilience4j.circuitbreaker:
   instances:
