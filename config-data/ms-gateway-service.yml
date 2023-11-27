@@ -1,0 +1,71 @@
+server:
+  port: 8080
+eureka:
+  client:
+    serviceUrl:
+      #defaultZone: http://localhost:8090/eureka
+      defaultZone: ${EUREKA_URI:http://localhost:8070/eureka}
+  instance:
+    #hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      discovery:
+        locator:
+          enable: true
+      routes:
+        - id: ms-cliente-service
+          uri: lb://ms-cliente-service
+          predicates:
+            - Path=/cliente/**
+        - id: venta-service
+          uri: lb://venta-service
+          predicates:
+            - Path=/venta/**
+        - id: ms-procesamiento-pedidos-service
+          uri: lb://ms-procesamiento-pedidos-service
+          predicates:
+            - Path=/pedido/**
+        - id: ms-auth-service
+          uri: lb://ms-auth-service
+          predicates:
+            - Path=/auth/**
+        - id: venta-service
+          uri: lb://venta-service
+          predicates:
+            - Path=/venta/**
+        - id: producto-service
+          uri: lb://producto-service
+          predicates:
+            - Path=/producto/**
+        - id: categoria-service
+          uri: lb://categoria-service
+          predicates:
+            - Path=/categoria/**
+        - id: ms-pago-service
+          uri: lb://ms-pago-service
+          predicates:
+            - Path=/pago/**
+        - id: ms-inventario-service
+          uri: lb://ms-inventario-service
+          predicates:
+            - Path=/inventario/**
+        - id: ms-proveedor-service
+          uri: lb://ms-proveedor-service
+          predicates:
+            - Path=/proveedor/**
+        - id: ms-factura-service
+          uri: lb://ms-factura-service
+          predicates:
+            - Path=/factura/**
