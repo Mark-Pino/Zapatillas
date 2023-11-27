@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: ms-carrito-service
+  profiles:
+      active: development
+  config:
+    import: optional:configserver:http://root:s3cr3t@localhost:7070
+  eureka:
+    client:
+     service-url:
+        defaultZone: http://localhost:8070/eureka/
